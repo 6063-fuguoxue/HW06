@@ -20,6 +20,6 @@ The lyrics I use are saved in a .txt file named lyrics.txt. They are separated i
 In the `setup()` function, I initialized text-related properties like text font and text size. I also set the frame rate to 4, because I want to use it for animation speed control. 
 
 ### Part 1
-The first part of the animation is achieved by the `printLine1` function. Initially, a `bgColorList` and a `textColorList` are preset for each line in part 1 animation. 
+First, the `draw()` function gets the `currentLine` to animate from the .txt file. Then, the first part of the animation is achieved by the `printLine1` function. In this function, a `bgColorList` and a `textColorList` are preset for each line in part 1 animation. Then, the current line is split into a list of words and animated out one by one at the rate of 4 words per second (same as the frame rate). When all the words in the current line are printed out, the text stays on the canvas and waits for a mouse click from the viewer. 
 
 ### Part 2
