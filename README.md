@@ -23,3 +23,21 @@ In the `setup()` function, I initialized text-related properties like text font 
 First, the `draw()` function gets the `currentLine` to animate from the .txt file. Then, the first part of the animation is achieved by the `printLine1` function. In this function, a `bgColorList` and a `textColorList` are preset for each line in part 1 animation. Then, the current line is split into a list of words and animated out one by one at the rate of 4 words per second (same as the frame rate). When all the words in the current line are printed out, the text stays on the canvas and waits for a mouse click from the viewer. 
 
 ### Part 2
+This part is a bit difficult for me and I spent most of my time on its logic. Different from the first part, I want lines in this part printed out one by one in groups of 3. Also, the animation should wait for the viewer's mouse to click upon animating each group of 3 lines. 
+
+My solution is to use an if-else statement: if `lineIndex % 3 == 0`, then only print the current line; else if `lineIndex % 3 == 1`, then print the current line and its previous line; else (lineIndex % 3 == 2), print the current line and the line previous to its previous line. 
+
+Since I wanted to alter the style of the lines, I created a `StylizedLine` class with a `draw()` function. In this way, all the properties of text and background styles are handled by the `StylizedLine` class and I could focus on the logic in the main `draw()` function. 
+
+Moreover, the speeds of the two parts of animation should be different. In the musical, the first part of the lyrics has more words compared with the second part in the same length of time. Therefore, I added another if statement (`if (frameCount%2 == 0)`) outside of the if-else statement for animation. In this way, I slow down the second part of the animation by updating the canvas once for every two frames. 
+
+Since I was focusing on the animation logic, I simplified the position of each line in a group. The initial plan had each 3 lines positioned without a clear pattern, so I changed them to the pattern of top-center-bottom. 
+
+Below is a summary of the initial plan of line positioning. 
+
+![Initial plan of line positioning](./initial-plan-2nd-part.png)
+
+## Conclusion
+Drawing with text is an interesting experience. However, I find it less straightforward than pure shapes because it requires string manipulation. 
+
+For the logic of the second part of the animation, I see the repetitive patterns but haven't figured out how to simplify them. Maybe they can be simplified into a for loop. I will update my codes once I figure it out. 
