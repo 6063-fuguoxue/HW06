@@ -9,6 +9,17 @@ For this project, since it only involves text, I used PowerPoint slides to do sk
 ![Sketch 1](./Slide1.PNG)
 ![Sketch 10](./Slide10.PNG)
 
-For the first part of the animation (slides 1 to 9), I want the words to print out one by one. For the second part, since the lyrics form groups of 3 lines, I want to put 3 lines on the canvas one by one for each group. 
+For the first part of the animation (slides 1 to 9), I want the words to print out one by one. For the second part, since the lyrics form groups of 3 lines, I want to put 3 lines on the canvas one by one for each group. The viewer can interact with the screen by mouse clicks. After one animation, the viewer needs to click the mouse to see the next animation. 
 
 ## Implementation
+### Initialization
+To start with, the code initializes a `lineIndex` variable, which stores the index of the current line to animate. The mouse interaction is handled by the `mouseClicked()` function written at the end of the code. 
+
+The lyrics I use are saved in a .txt file named lyrics.txt. They are separated into several lines so that it is easy to process them later with codes. The .txt file is preloaded by the `preload()` function. 
+
+In the `setup()` function, I initialized text-related properties like text font and text size. I also set the frame rate to 4, because I want to use it for animation speed control. 
+
+### Part 1
+The first part of the animation is achieved by the `printLine1` function. Initially, a `bgColorList` and a `textColorList` are preset for each line in part 1 animation. 
+
+### Part 2
