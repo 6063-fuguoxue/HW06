@@ -101,7 +101,7 @@ function draw() {
         line1 = lines[lineIndex - 2];
         new StylizedLine(height/4, TOP, 60, line1, "OrangeRed").draw();
         // new StylizedLine(height/2, CENTER, 40, line2, 150).draw();
-        new StylizedLine(height*3/4, BOTTOM, 60, line3, "OrangeRed").draw();
+        new StylizedLine(height*3/4, BOTTOM, 100, line3, "OrangeRed").draw();
       }
     }
   }
